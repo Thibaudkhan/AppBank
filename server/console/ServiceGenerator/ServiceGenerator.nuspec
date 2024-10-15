@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>ServiceGenerator</id>
+        <version>1.0.0</version>
+        <authors>Thibaudkhan</authors>
+        <description>Un outil pour générer des services en .NET</description>
+        <tags>dotnet cli tool service generator</tags>
+        <projectUrl>https://github.com/ton-repo</projectUrl>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    </metadata>
+    <files>
+        <file src="publish\**\*" target="tools/net8.0/any/" />
+    </files>
+</package>

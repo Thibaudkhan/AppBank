@@ -1,0 +1,19 @@
+﻿version: '3.8'
+
+services:
+  # Service pour l'application .NET (ApiBank.Api)
+  apibank:
+    build:
+      context: .
+      dockerfile: src/ApiBank.Api/Dockerfile
+    ports:
+      - "5000:80" 
+    networks:
+      - apibank-network
+
+
+networks:
+  apibank-network:
+    driver: bridge
+
+

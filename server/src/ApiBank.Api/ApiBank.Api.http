@@ -1,0 +1,51 @@
+@ApiBank.Api_HostAddress = http://localhost:5094
+
+GET {{ApiBank.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{ApiBank.Api_HostAddress}}/api/v1/auth/
+Accept: application/json
+###
+
+POST {{ApiBank.Api_HostAddress}}/api/v1/auth/
+Content-Type: application/json
+
+{
+  "Username": "admin",
+  "Password": "admin"
+}
+###
+
+GET {{ApiBank.Api_HostAddress}}/api/v1/services/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzI4OTIxNjg1LCJleHAiOjE3Mjg5MjUyODQsImlhdCI6MTcyODkyMTY4NSwiaXNzIjoiaHR0cHM6Ly9hcGliYW5rLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpYmFuay5jb20ifQ.LzREa0ChvSopC64FL9MGFjqjjZnRaX_pW9OO92zwVK0
+
+###
+
+
+
+GET {{ApiBank.Api_HostAddress}}/api/v1/services/ServiceB
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzI4OTIxNjg1LCJleHAiOjE3Mjg5MjUyODQsImlhdCI6MTcyODkyMTY4NSwiaXNzIjoiaHR0cHM6Ly9hcGliYW5rLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpYmFuay5jb20ifQ.LzREa0ChvSopC64FL9MGFjqjjZnRaX_pW9OO92zwVK0
+
+###
+
+
+
+
+POST {{ApiBank.Api_HostAddress}}/api/v1/services/ServiceA
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzI4OTIxNjg1LCJleHAiOjE3Mjg5MjUyODQsImlhdCI6MTcyODkyMTY4NSwiaXNzIjoiaHR0cHM6Ly9hcGliYW5rLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpYmFuay5jb20ifQ.LzREa0ChvSopC64FL9MGFjqjjZnRaX_pW9OO92zwVK0
+
+{
+  "ActionName": "Action1"
+}
+###
+
+
+GET {{ApiBank.Api_HostAddress}}/api/v1/services/ServiceB/logs/80feb454-c709-4469-8ad5-202122839aa8
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzI4OTIxNjg1LCJleHAiOjE3Mjg5MjUyODQsImlhdCI6MTcyODkyMTY4NSwiaXNzIjoiaHR0cHM6Ly9hcGliYW5rLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpYmFuay5jb20ifQ.LzREa0ChvSopC64FL9MGFjqjjZnRaX_pW9OO92zwVK0
+
+###

@@ -1,0 +1,93 @@
+# .NET Ignore Patterns
+## Ignore build output
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.pdb
+*.exe
+*.dll
+*.log
+*.vs/
+*.nupkg
+*.snupkg
+*.pyc
+*.dbmdl
+*.cache
+*.swp
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# NuGet Packages
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework migrations
+Migrations/
+
+# Publish Output
+publish/
+wwwroot/
+
+# React/Node.js Ignore Patterns
+## Dependency directories
+node_modules/
+jspm_packages/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compiled JavaScript
+*.log
+*.tsbuildinfo
+
+# Production build
+/build/
+
+# Runtime data
+.pnpm-debug.log*
+
+# Test coverage
+/coverage/
+
+# Static bundle
+/dist/
+
+# Typescript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# MacOS specific
+.DS_Store
