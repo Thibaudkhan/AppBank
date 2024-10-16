@@ -9,6 +9,8 @@
 ````bash
 docker-compose up --build
 ````
-3. Accéder à l'application
-   Frontend (React) : L'application React sera disponible sur http://localhost:3000
-   Backend (API .NET) : L'API backend sera disponible sur http://localhost:8083
+# Accéder à l'application
+
+Frontend (React) : L'application React sera disponible sur http://localhost:3000
+
+Backend (API .NET) : L'API backend sera disponible sur http://localhost:8083
