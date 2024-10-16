@@ -1,7 +1,7 @@
 # Cloner le projet
 
 ````bash
-   git clone https://github.com/username/ApiBank.git
+   git clone https://github.com/Thibaudkhan/AppBank.git
    cd ApiBank
 ````
 
