@@ -71,7 +71,15 @@ builder.Services.AddSingleton<ITaskManager, TaskManager>(provider =>
 });
 builder.Services.AddSingleton<ICustomWebSocketManager, CustomWebSocketManager>();
 //builder.Services.AddSingleton<ServiceRegistry>();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 var app = builder.Build();
 
 app.Services.GetRequiredService<WebSocketNotificationService>();
@@ -104,6 +112,9 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapControllers();
 
+
+
+app.UseCors("AllowAllOrigins");
 // Mapper le endpoint WebSocket
 app.Map("/api/v1/ws", async context =>
 {

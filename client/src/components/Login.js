@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import {authenticate} from "../services/api";
 
 const Login = () => {
     const { login } = useContext(AuthContext);
@@ -13,10 +14,8 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/v1/auth', {
-                username,
-                password,
-            });
+            const response = await authenticate(username, password);
+
             console.log("response.data.token");
             console.log(response.data);
             login(response.data);
@@ -50,6 +49,8 @@ const Login = () => {
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     <button type="submit">Se connecter</button>
                 </form>
+
+
             </div>
         </div>
     );

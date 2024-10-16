@@ -6,7 +6,7 @@ const ActionLogs = ({ uuid, token, action }) => {
     useEffect(() => {
         let ws;
         const connectWebSocket = () => {
-            ws = new WebSocket(`ws://localhost:5094/api/v1/ws/${uuid}?token=${token}`);
+            ws = new WebSocket(`ws://localhost:8083/api/v1/ws/${uuid}?token=${token}`);
 
             ws.onopen = () => console.log("WebSocket connection established");
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ActionLogs from './ActionLogs';
+import {executeAction, getServiceActions, getServices} from "../services/api";
 
 const ServiceActions = ({ serviceName, token }) => {
     const [actions, setActions] = useState([]);
@@ -9,22 +10,26 @@ const ServiceActions = ({ serviceName, token }) => {
 
     useEffect(() => {
         const fetchActions = async () => {
-            const response = await axios.get(`/api/v1/services/${serviceName}`, {
-                headers: { Authorization: `Bearer ${token}` },
-            });
+            // const response = await axios.get(`http://localhost:8083/api/v1/services/${serviceName}`, {
+            //     headers: { Authorization: `Bearer ${token}` },
+            // });
+            const response = await getServiceActions(serviceName,token);
+
             setActions(response.data);
         };
         fetchActions();
     }, [serviceName, token]);
 
     const triggerAction = async (action) => {
-        const response = await axios.post(
-            `/api/v1/services/${serviceName}`,
-            { ActionName: action },
-            {
-                headers: { Authorization: `Bearer ${token}` },
-            }
-        );
+        // const response = await axios.post(
+        //     `http://localhost:8083/api/v1/services/${serviceName}`,
+        //     { ActionName: action },
+        //     {
+        //         headers: { Authorization: `Bearer ${token}` },
+        //     }
+        // );
+        const response = await executeAction(serviceName,action,token);
+
         console.log("response.data.taskId");
         console.log(response.data.taskId);
         setUuid(response.data.taskId);

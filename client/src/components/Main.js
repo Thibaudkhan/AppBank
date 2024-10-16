@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import ServiceActions from './ServiceActions';
+import {authenticate, getServices} from "../services/api";
 
 const Main = () => {
     const { token } = useContext(AuthContext);
@@ -10,9 +11,13 @@ const Main = () => {
 
     useEffect(() => {
         const fetchServices = async () => {
-            const response = await axios.get('/api/v1/services', {
-                headers: { Authorization: `Bearer ${token}` },
-            });
+            // const response = await axios.get('http://localhost:8083/api/v1/services', {
+            //     headers: { Authorization: `Bearer ${token}` },
+            // });
+            console.log("token");
+            console.log(token);
+            const response = await getServices(token);
+
             setServices(response.data);
         };
         fetchServices();

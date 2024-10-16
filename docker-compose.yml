@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api-bank:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: api-bank
+    ports:
+      - "8083:8080"
+    networks:
+      - app-network
+
+  react-app:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: react-app
+    ports:
+      - "3000:80"
+    depends_on:
+      - api-bank
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
